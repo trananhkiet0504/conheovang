@@ -8,27 +8,27 @@ const Navigation: React.FC = () => (
     items={[
       {
         key: 'home',
-        label: 'Trang Chủ',
+        label: '홈',
         className: 'text-gray-700 hover:text-orange-500 font-medium text-sm lg:text-base',
       },
       {
         key: 'menu',
-        label: 'Thực Đơn',
+        label: '메뉴',
         className: 'text-gray-700 hover:text-orange-500 font-medium text-sm lg:text-base',
       },
       {
         key: 'about',
-        label: 'Về Chúng Tôi',
+        label: '회사 소개',
         className: 'text-gray-700 hover:text-orange-500 font-medium text-sm lg:text-base',
       },
       {
         key: 'booking',
-        label: 'Đặt Bàn',
+        label: '예약',
         className: 'text-gray-700 hover:text-orange-500 font-medium text-sm lg:text-base',
       },
       {
         key: 'contact',
-        label: 'Liên Hệ',
+        label: '문의하기',
         className: 'text-gray-700 hover:text-orange-500 font-medium text-sm lg:text-base',
       },
     ]}

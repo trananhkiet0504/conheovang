@@ -70,11 +70,11 @@ const HeaderHomepage: React.FC = () => {
   const userMenu = (
     <Menu onClick={handleMenuClick}>
       <Menu.Item key='profile' icon={<UserOutlined />}>
-        Thông Tin Cá Nhân
+        프로필 정보
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key='logout' icon={<LogoutOutlined />}>
-        Đăng Xuất
+        로그아웃
       </Menu.Item>
     </Menu>
   );
@@ -82,7 +82,7 @@ const HeaderHomepage: React.FC = () => {
   const mobileMenuItems = [
     {
       key: 'home',
-      label: 'Trang Chủ',
+      label: '홈',
       onClick: () => {
         navigate('/homepage');
         setMobileMenuOpen(false);
@@ -90,7 +90,7 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'menu',
-      label: 'Thực Đơn',
+      label: '메뉴',
       onClick: () => {
         navigate('/menu');
         setMobileMenuOpen(false);
@@ -98,7 +98,7 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'about',
-      label: 'Về Chúng Tôi',
+      label: '회사 소개',
       onClick: () => {
         navigate('/about');
         setMobileMenuOpen(false);
@@ -106,7 +106,7 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'booking',
-      label: 'Đặt Bàn',
+      label: '예약',
       onClick: () => {
         navigate('/booking');
         setMobileMenuOpen(false);
@@ -114,7 +114,7 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'contact',
-      label: 'Liên Hệ',
+      label: '문의하기',
       onClick: () => {
         navigate('/contact');
         setMobileMenuOpen(false);
@@ -141,7 +141,7 @@ const HeaderHomepage: React.FC = () => {
             <div className='flex cursor-pointer items-center gap-2'>
               <Avatar icon={<UserOutlined />} />
               <span className='text-sm font-medium text-gray-700'>
-                {isLoggedIn ? userName : 'Đăng Nhập'}
+                {isLoggedIn ? userName : '로그인'}
               </span>
             </div>
           </Dropdown>
@@ -153,7 +153,7 @@ const HeaderHomepage: React.FC = () => {
             <div className='flex cursor-pointer items-center gap-1'>
               <Avatar size='small' icon={<UserOutlined />} />
               <span className='hidden text-xs font-medium text-gray-700 sm:block'>
-                {isLoggedIn ? userName : 'Đăng Nhập'}
+                {isLoggedIn ? userName : '로그인'}
               </span>
             </div>
           </Dropdown>
@@ -207,10 +207,10 @@ const HeaderHomepage: React.FC = () => {
               <Avatar icon={<UserOutlined />} />
               <div className='flex flex-col'>
                 <span className='text-sm font-medium text-gray-800'>
-                  {isLoggedIn ? userName : 'Khách'}
+                  {isLoggedIn ? userName : '손님'}
                 </span>
                 <span className='text-xs text-gray-500'>
-                  {isLoggedIn ? 'Đã đăng nhập' : 'Chưa đăng nhập'}
+                  {isLoggedIn ? '로그인됨' : '로그인되지 않음'}
                 </span>
               </div>
             </div>
@@ -222,7 +222,7 @@ const HeaderHomepage: React.FC = () => {
                 onClick={handleLogout}
                 className='mt-3 w-full justify-start'
               >
-                Đăng Xuất
+                로그아웃
               </Button>
             )}
           </div>

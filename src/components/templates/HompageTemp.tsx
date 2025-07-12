@@ -21,6 +21,7 @@ import mealMenu from '../../assets/Meal.jpg';
 import porkMenu from '../../assets/Pork.jpg';
 import Banner from '../organisms/Banner';
 import HeaderHomepage from '../organisms/HeaderHomepage';
+import Footer from '../organisms/Footer';
 
 const { Content } = Layout;
 const { Search } = Input;
@@ -50,9 +51,9 @@ const HompageTemplate: FC = () => {
   const popularDishes = [
     {
       id: 1,
-      name: 'Thịt Nướng BBQ',
-      description: 'Thịt heo tươi nướng than hoa với sốt đặc biệt',
-      price: '150.000đ',
+      name: 'BBQ 삼겹살',
+      description: '특제 소스로 숯불에 구운 신선한 돼지고기',
+      price: '150,000₫',
       image: '/images/dish1.jpg',
       rating: 4.8,
       isSpicy: true,
@@ -61,9 +62,9 @@ const HompageTemplate: FC = () => {
     },
     {
       id: 2,
-      name: 'Sườn Nướng Mật Ong',
-      description: 'Sườn heo nướng mật ong thơm ngọt',
-      price: '180.000đ',
+      name: '꿀 양념 갈비',
+      description: '달콤한 꿀 양념으로 구운 돼지갈비',
+      price: '180,000₫',
       image: '/images/dish2.jpg',
       rating: 4.9,
       isSpicy: false,
@@ -72,9 +73,9 @@ const HompageTemplate: FC = () => {
     },
     {
       id: 3,
-      name: 'Bụng Heo Nướng',
-      description: 'Bụng heo nướng giòn với gia vị đặc biệt',
-      price: '200.000đ',
+      name: '삼겹살 구이',
+      description: '특제 양념으로 바삭하게 구운 삼겹살',
+      price: '200,000₫',
       image: '/images/dish3.jpg',
       rating: 4.7,
       isSpicy: true,
@@ -83,9 +84,9 @@ const HompageTemplate: FC = () => {
     },
     {
       id: 4,
-      name: 'Chân Giò Nướng',
-      description: 'Chân giò nướng mềm với sốt chua ngọt',
-      price: '120.000đ',
+      name: '족발 구이',
+      description: '새콤달콤 소스로 부드럽게 구운 족발',
+      price: '120,000₫',
       image: '/images/dish4.jpg',
       rating: 4.6,
       isSpicy: false,
@@ -94,9 +95,9 @@ const HompageTemplate: FC = () => {
     },
     {
       id: 5,
-      name: 'Gà Nướng Lá Chanh',
-      description: 'Gà nướng với lá chanh thơm nức',
-      price: '250.000đ',
+      name: '레몬잎 닭구이',
+      description: '향긋한 레몬잎과 함께 구운 닭고기',
+      price: '250,000₫',
       image: '/images/dish5.jpg',
       rating: 4.9,
       isSpicy: false,
@@ -105,9 +106,9 @@ const HompageTemplate: FC = () => {
     },
     {
       id: 6,
-      name: 'Tôm Nướng Muối Ớt',
-      description: 'Tôm tươi nướng muối ớt cay nồng',
-      price: '300.000đ',
+      name: '매운 소금구이 새우',
+      description: '매콤한 소금 양념으로 구운 신선한 새우',
+      price: '300,000₫',
       image: '/images/dish6.jpg',
       rating: 4.8,
       isSpicy: true,
@@ -118,20 +119,20 @@ const HompageTemplate: FC = () => {
 
   const categories = [
     {
-      name: 'Món Nướng',
+      name: '구이',
       icon: '🔥',
       count: 12,
       color: 'from-red-500 to-orange-500',
     },
-    { name: 'Lẩu', icon: '🍲', count: 8, color: 'from-blue-500 to-purple-500' },
+    { name: '전골', icon: '🍲', count: 8, color: 'from-blue-500 to-purple-500' },
     {
-      name: 'Khai Vị',
+      name: '에피타이저',
       icon: '🥗',
       count: 6,
       color: 'from-green-500 to-teal-500',
     },
     {
-      name: 'Đồ Uống',
+      name: '음료',
       icon: '🥤',
       count: 10,
       color: 'from-pink-500 to-rose-500',
@@ -237,10 +238,10 @@ const HompageTemplate: FC = () => {
                   <EnvironmentOutlined className='text-2xl text-orange-500 sm:text-3xl md:text-4xl' />
                 </motion.div>
                 <h3 className='mb-2 text-lg font-bold text-gray-800 sm:mb-3 sm:text-xl'>
-                  Địa Chỉ
+                  주소
                 </h3>
                 <p className='text-sm text-gray-600 transition-colors group-hover:text-orange-600 sm:text-base'>
-                  183/185 Dương Đình Nghệ, TP Đà Nẵng
+                  183/185 Duong Dinh Nghe, Da Nang
                 </p>
               </motion.div>
 
@@ -252,10 +253,10 @@ const HompageTemplate: FC = () => {
                   <PhoneOutlined className='text-2xl text-orange-500 sm:text-3xl md:text-4xl' />
                 </motion.div>
                 <h3 className='mb-2 text-lg font-bold text-gray-800 sm:mb-3 sm:text-xl'>
-                  Đặt Bàn
+                  예약 문의
                 </h3>
                 <p className='text-sm text-gray-600 transition-colors group-hover:text-orange-600 sm:text-base'>
-                  0909 123 456
+                090 585 92 87
                 </p>
               </motion.div>
 
@@ -267,7 +268,7 @@ const HompageTemplate: FC = () => {
                   <ClockCircleOutlined className='text-2xl text-orange-500 sm:text-3xl md:text-4xl' />
                 </motion.div>
                 <h3 className='mb-2 text-lg font-bold text-gray-800 sm:mb-3 sm:text-xl'>
-                  Giờ Mở Cửa
+                  영업 시간
                 </h3>
                 <p className='text-sm text-gray-600 transition-colors group-hover:text-orange-600 sm:text-base'>
                   10:00 - 22:00
@@ -294,25 +295,21 @@ const HompageTemplate: FC = () => {
               className='mb-6 text-center sm:mb-8 md:mb-12'
             >
               <h2 className='mb-2 text-2xl font-extrabold tracking-tight text-orange-600 drop-shadow-lg sm:mb-3 sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl'>
-                Món Nổi Bật
+                인기 메뉴
               </h2>
               <p className='mx-auto mb-2 max-w-2xl text-sm font-medium text-gray-700 drop-shadow-sm sm:text-base md:mb-4 md:text-lg lg:text-xl'>
-                Những món ăn được yêu thích nhất tại{' '}
-                <span className='font-semibold text-orange-600'>
-                  Con Heo Vàng
-                </span>{' '}
-                với hương vị đặc trưng Hàn Quốc
+                <span className='font-semibold text-orange-600'>황금돼지</span>에서 가장 인기 있는 한국식 요리
               </p>
               <div className='mx-auto mt-3 h-1 w-16 rounded-full bg-orange-500 sm:mt-4 sm:w-24'></div>
             </motion.div>
             <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:gap-8'>
               {[
-                { src: beefMenu, title: 'Beef Menu' },
-                { src: beef2Menu, title: 'Beef Cuts' },
-                { src: goldenSetMenu, title: 'Golden Set' },
-                { src: porkMenu, title: 'Pork Menu' },
-                { src: mealMenu, title: 'Meal Menu' },
-                { src: drinkMenu, title: 'Drink Menu' },
+                { src: beefMenu, title: '소고기 메뉴' },
+                { src: beef2Menu, title: '소고기 커트' },
+                { src: goldenSetMenu, title: '골든 세트' },
+                { src: porkMenu, title: '돼지고기 메뉴' },
+                { src: mealMenu, title: '식사 메뉴' },
+                { src: drinkMenu, title: '음료 메뉴' },
               ].map((menu, idx) => (
                 <motion.div
                   key={menu.title}
@@ -322,11 +319,11 @@ const HompageTemplate: FC = () => {
                   viewport={{ once: true }}
                   className='group flex w-full flex-col items-center overflow-hidden rounded-xl bg-white shadow-lg sm:rounded-2xl'
                 >
-                  <div className='relative h-0 w-full overflow-hidden pb-[75%] sm:pb-[70%] md:pb-[140%]'>
+                  <div className='relative h-40 w-full overflow-hidden rounded-xl bg-white sm:h-0 sm:pb-[70%] md:pb-[140%]'>
                     <img
                       src={menu.src}
                       alt={menu.title}
-                      className='absolute inset-0 h-full w-full max-w-full object-cover object-center transition-transform duration-300 group-hover:scale-105'
+                      className='absolute inset-0 h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105 bg-white sm:object-cover'
                     />
                   </div>
                   <div className='w-full py-2 text-center sm:py-3 md:py-4'>
@@ -352,15 +349,13 @@ const HompageTemplate: FC = () => {
             {/* Left: Text Content */}
             <div className='flex h-full w-full flex-col items-start justify-center text-center lg:text-left'>
               <span className='mb-3 inline-block rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-600 sm:mb-4 sm:px-4 sm:text-sm'>
-                Câu chuyện của chúng tôi
+                저희 이야기
               </span>
               <h2 className='mb-3 text-2xl leading-tight font-extrabold break-words text-gray-900 sm:mb-4 sm:text-3xl md:mb-6 md:text-4xl lg:text-5xl'>
-                Hành Trình Mang{' '}
-                <span className='text-orange-600'>Hương Vị Nướng</span> Đến Hàn
-                Quốc
+                <span className='text-orange-600'>한국식 바비큐</span>의 맛을 전하는 여정
               </h2>
               <p className='mb-4 text-lg font-bold text-orange-500 sm:text-xl md:text-2xl lg:text-3xl'>
-                Kết nối bạn bè
+                친구와의 만남
               </p>
             </div>
             {/* Right: Image */}
@@ -394,7 +389,7 @@ const HompageTemplate: FC = () => {
               viewport={{ once: true }}
               className='mb-3 text-2xl font-bold text-gray-800 sm:mb-4 md:mb-6 md:text-3xl lg:text-4xl'
             >
-              Liên Hệ Đặt Bàn
+              예약 문의
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -403,8 +398,7 @@ const HompageTemplate: FC = () => {
               viewport={{ once: true }}
               className='mx-auto mb-4 max-w-2xl text-sm text-gray-600 sm:mb-6 sm:text-base md:mb-8 md:text-lg'
             >
-              Đặt bàn trước để đảm bảo có chỗ ngồi tại nhà hàng Con Heo Vàng.
-              Chúng tôi luôn sẵn sàng phục vụ bạn!
+              콘헤오방에서 자리를 미리 예약하세요. 언제나 정성껏 모시겠습니다!
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -423,7 +417,7 @@ const HompageTemplate: FC = () => {
                   icon={<PhoneOutlined />}
                   className='h-10 w-full border-orange-500 bg-orange-500 px-4 text-sm font-medium hover:bg-orange-600 sm:h-11 sm:px-6 sm:text-base md:h-12 md:px-8'
                 >
-                  <span className='hidden sm:inline'>Gọi Đặt Bàn: </span>0909 123 456
+                  <span className='hidden sm:inline'>전화 예약: </span>: 090 585 92 87
                 </Button>
               </motion.div>
               <motion.div
@@ -434,7 +428,7 @@ const HompageTemplate: FC = () => {
                   size='large'
                   className='h-10 w-full border-orange-500 px-4 text-sm font-medium text-orange-500 hover:bg-orange-50 sm:h-11 sm:px-6 sm:text-base md:h-12 md:px-8'
                 >
-                  Xem Bản Đồ
+                  지도 보기
                 </Button>
               </motion.div>
             </motion.div>
@@ -443,75 +437,7 @@ const HompageTemplate: FC = () => {
       </Content>
 
       {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className='bg-gradient-to-r from-gray-800 to-gray-900 px-4 py-6 text-white sm:px-6 sm:py-8 md:py-12'
-      >
-        <div className='mx-auto max-w-6xl'>
-          <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8'>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h3 className='mb-2 text-lg font-bold text-orange-400 sm:mb-3 md:mb-4 md:text-xl lg:text-2xl'>
-                Con Heo Vàng
-              </h3>
-              <p className='text-xs leading-relaxed text-gray-300 sm:text-sm md:text-base'>
-                Nhà hàng nướng với hương vị Hàn Quốc đích thực. Chất lượng tươi
-                ngon, phục vụ chu đáo.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h4 className='mb-2 text-sm font-bold sm:mb-3 md:mb-4 md:text-base lg:text-lg'>
-                Liên Hệ
-              </h4>
-              <div className='space-y-1 text-xs text-gray-300 sm:space-y-2 sm:text-sm md:space-y-3 md:text-base'>
-                <p className='flex items-center gap-2'>📞 0909 123 456</p>
-                <p className='flex items-center gap-2'>
-                  📍 183/185 Dương Đình Nghệ, TP Đà Nẵng
-                </p>
-                <p className='flex items-center gap-2'>🕒 16:00 - 23:00</p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className='sm:col-span-2 md:col-span-1'
-            >
-              <h4 className='mb-2 text-sm font-bold sm:mb-3 md:mb-4 md:text-base lg:text-lg'>
-                Theo Dõi
-              </h4>
-              <div className='space-y-1 text-xs text-gray-300 sm:space-y-2 sm:text-sm md:space-y-3 md:text-base'>
-                <p>Facebook: Con Heo Vàng</p>
-                <p>Instagram: @conheovang</p>
-                <p>Zalo: Con Heo Vàng</p>
-              </div>
-            </motion.div>
-          </div>
-          <Divider className='my-4 bg-gray-700 sm:my-6 md:my-8' />
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            className='text-center text-xs text-gray-400 sm:text-sm md:text-base'
-          >
-            <p>&copy;2025 Con Heo Vàng. Tất cả quyền được bảo lưu.</p>
-          </motion.div>
-        </div>
-      </motion.footer>
+      <Footer />
     </Layout>
   );
 };
