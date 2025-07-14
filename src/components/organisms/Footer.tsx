@@ -27,7 +27,7 @@ const Footer: FC = () => (
         <div>
           <h4 className='mb-2 text-base font-bold text-white'>문의하기</h4>
           <div className='text-xs sm:text-sm md:text-base text-gray-300 space-y-1'>
-            <div>DIGIFNB 유한책임회사</div>
+            <div>유한책임회사</div>
             <div>핫라인: 090 585 92 87</div>
             <div>주소: 183-185 Dương Đình Nghệ, An Hải Bắc, Sơn Trà, TP Đà Nẵng, Việt Nam, Da Nang, Vietnam</div>
           </div>
