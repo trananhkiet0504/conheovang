@@ -271,7 +271,7 @@ const HompageTemplate: FC = () => {
                   영업 시간
                 </h3>
                 <p className='text-sm text-gray-600 transition-colors group-hover:text-orange-600 sm:text-base'>
-                  10:00 - 22:00
+                  16:00 - 23:30
                 </p>
               </motion.div>
             </motion.div>
@@ -355,7 +355,7 @@ const HompageTemplate: FC = () => {
                 <span className='text-orange-600'>한국식 바비큐</span>의 맛을 전하는 여정
               </h2>
               <p className='mb-4 text-lg font-bold text-orange-500 sm:text-xl md:text-2xl lg:text-3xl'>
-                친구와의 만남
+              오랜만에 만난 친구와의 만남은 언제나 특별하다. 함께 맛있는 음식을 먹고, 그동안 못 나눈 이야기를 나누며 웃음이 끊이지 않았다. 짧은 시간이었지만 마음이 따뜻해지고, 다시 힘을 낼 수 있는 소중한 시간이 되었다.
               </p>
             </div>
             {/* Right: Image */}
