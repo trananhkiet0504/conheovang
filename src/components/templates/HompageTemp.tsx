@@ -319,11 +319,11 @@ const HompageTemplate: FC = () => {
                   viewport={{ once: true }}
                   className='group flex w-full flex-col items-center overflow-hidden rounded-xl bg-white shadow-lg sm:rounded-2xl'
                 >
-                  <div className='relative h-40 w-full overflow-hidden rounded-xl bg-white sm:h-0 sm:pb-[70%] md:pb-[140%]'>
+                  <div className='relative aspect-[4/6] w-full overflow-hidden rounded-xl bg-white sm:h-0 sm:pb-[70%] md:pb-[140%]'>
                     <img
                       src={menu.src}
                       alt={menu.title}
-                      className='absolute inset-0 h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105 bg-white sm:object-cover'
+                      className='absolute inset-0 h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105 bg-white'
                     />
                   </div>
                   <div className='w-full py-2 text-center sm:py-3 md:py-4'>
