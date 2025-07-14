@@ -45,6 +45,7 @@ body {
 .ant-avatar {
   
 }
+<<<<<<< HEAD
 
 /* Mobile Responsive Improvements */
 @media (max-width: 768px) {
@@ -155,6 +156,11 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
+=======
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+>>>>>>> b98a68fc6dd9c1f576f265fb6cec7c211801e67c
 @keyframes float {
   0% {
     transform: translateX(10px) translateY(0);
@@ -166,7 +172,10 @@ body {
     transform: translateX(10px) translateY(0);
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> b98a68fc6dd9c1f576f265fb6cec7c211801e67c
 .bg-banner {
   background-image: url('/src/assets/banner-new.png');
 }
@@ -234,6 +243,7 @@ body {
     animation: fade-in 0.3s ease-out forwards;
   }
 }
+<<<<<<< HEAD
 
 /* Mobile-specific animations */
 @media (max-width: 768px) {
@@ -294,3 +304,5 @@ body {
     margin: 16px !important;
   }
 }
+=======
+>>>>>>> b98a68fc6dd9c1f576f265fb6cec7c211801e67c
