@@ -2,15 +2,10 @@ import { FC, useEffect, useState } from 'react';
 import {
   ClockCircleOutlined,
   EnvironmentOutlined,
-  FireOutlined,
-  HeartOutlined,
   PhoneOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-  StarOutlined,
 } from '@ant-design/icons';
-import { Badge, Button, Card, Divider, Input, Layout, Rate } from 'antd';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Badge, Button, Input, Layout } from 'antd';
+import { motion } from 'framer-motion';
 
 import beefMenu from '../../assets/Beef.jpg';
 import beef2Menu from '../../assets/Beef2.jpg';
@@ -22,9 +17,10 @@ import porkMenu from '../../assets/Pork.jpg';
 import Banner from '../organisms/Banner';
 import HeaderHomepage from '../organisms/HeaderHomepage';
 import Footer from '../organisms/Footer';
+import PhoneCallTemp from './PhoneCallTemp';
 
 const { Content } = Layout;
-const { Search } = Input;
+
 
 const HompageTemplate: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -177,26 +173,7 @@ const HompageTemplate: FC = () => {
       <HeaderHomepage />
 
       {/* Floating Action Button */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className='fixed right-4 bottom-4 z-50 sm:right-6 sm:bottom-6'
-      >
-        <Button
-          type='primary'
-          shape='circle'
-          size='large'
-          icon={<PhoneOutlined />}
-          className='floating-action-button border-orange-500 bg-orange-500 shadow-lg hover:bg-orange-600'
-          style={{ 
-            width: 'clamp(48px, 12vw, 60px)', 
-            height: 'clamp(48px, 12vw, 60px)',
-            minWidth: '48px',
-            minHeight: '48px'
-          }}
-        />
-      </motion.div>
+      <PhoneCallTemp />
 
       {/* Content */}
       <Content
