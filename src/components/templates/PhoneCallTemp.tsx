@@ -11,13 +11,13 @@ const PhoneCallTemp = () => {
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1, duration: 0.5 }}
-      className='fixed right-4 bottom-4 z-50 sm:hidden'
+      className='fixed right-4 bottom-4 z-50'
     >
       <div className='flex flex-col items-end'>
         {/* Overlay */}
         {showMenu && (
           <div
-            className='fixed inset-0 z-40 sm:hidden'
+            className='fixed inset-0 z-40'
             onClick={() => setShowMenu(false)}
           />
         )}
@@ -46,7 +46,7 @@ const PhoneCallTemp = () => {
                 <PhoneOutlined className='text-xl text-orange-500' />
               </a>
               <a
-                href='https://m.me/yourpageid'
+                href='https://www.facebook.com/conheovangbbq'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='flex h-11 w-11 items-center justify-center rounded-full bg-white shadow hover:bg-blue-50 border border-blue-400 transition-all duration-200'
