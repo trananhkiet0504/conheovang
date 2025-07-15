@@ -2,16 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogoutOutlined, UserOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { Avatar, Dropdown, Menu, Drawer, Button } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import Logo from '../atoms/Logo';
 import Navigation from '../molecules/Navigation';
 import logoImg from '../../assets/conheovang.jpg';
+import vietnamFlag from '../../assets/vietnam.jpg';
+import koreaFlag from '../../assets/hanquoc.png';
 
 const HeaderHomepage: React.FC = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState<string>('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { i18n } = useTranslation();
+  const lang = i18n.language;
 
   useEffect(() => {
     const checkUserLogin = () => {
@@ -122,16 +127,20 @@ const HeaderHomepage: React.FC = () => {
     },
   ];
 
+  const handleChangeLang = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <>
-      <header className='fixed top-0 right-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-white px-4 shadow-sm transition-all duration-300 md:h-20 md:px-8'>
+      <header className='fixed top-0 right-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-white px-2 shadow-sm transition-all duration-300 md:h-20 md:px-8'>
         {/* Logo */}
-        <div className='flex items-center'>
+        <div className='flex items-center max-w-[120px] md:max-w-none pl-1 md:pl-0'>
           <Logo />
         </div>
 
         {/* Desktop Navigation */}
-        <div className='hidden flex-1 px-8 md:block'>
+        <div className='hidden flex-1 px-4 md:px-8 md:block'>
           <Navigation />
         </div>
 
@@ -163,6 +172,24 @@ const HeaderHomepage: React.FC = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className='ml-2 flex h-8 w-8 items-center justify-center border-none p-0 text-gray-700 hover:bg-gray-100'
           />
+        </div>
+
+        {/* Language Toggle Button */}
+        <div className='hidden md:flex items-center gap-2 pr-2 md:pr-0'>
+          <button
+            onClick={() => handleChangeLang('vi')}
+            className={`flex items-center justify-center rounded-full p-1 text-xl transition-all duration-150 ${lang === 'vi' ? 'border-2 border-orange-500 bg-orange-50 scale-110' : 'border border-gray-200 bg-white opacity-70 hover:opacity-100'}`}
+            title='Chuyển sang Tiếng Việt'
+          >
+            <img src={vietnamFlag} alt='Vietnam' className='w-5 h-5 md:w-6 md:h-6 object-cover rounded-full' />
+          </button>
+          <button
+            onClick={() => handleChangeLang('ko')}
+            className={`flex items-center justify-center rounded-full p-1 text-xl transition-all duration-150 ${lang === 'ko' ? 'border-2 border-orange-500 bg-orange-50 scale-110' : 'border border-gray-200 bg-white opacity-70 hover:opacity-100'}`}
+            title='한국어로 변경'
+          >
+            <img src={koreaFlag} alt='Korea' className='w-5 h-5 md:w-6 md:h-6 object-cover rounded-full' />
+          </button>
         </div>
       </header>
 
@@ -225,6 +252,23 @@ const HeaderHomepage: React.FC = () => {
                 로그아웃
               </Button>
             )}
+            {/* Language Toggle in Drawer */}
+            <div className='flex items-center gap-3 mt-6 justify-center'>
+              <button
+                onClick={() => handleChangeLang('vi')}
+                className={`flex items-center justify-center rounded-full p-1 text-xl transition-all duration-150 ${lang === 'vi' ? 'border-2 border-orange-500 bg-orange-50 scale-110' : 'border border-gray-200 bg-white opacity-70 hover:opacity-100'}`}
+                title='Chuyển sang Tiếng Việt'
+              >
+                <img src={vietnamFlag} alt='Vietnam' className='w-6 h-6 object-cover rounded-full' />
+              </button>
+              <button
+                onClick={() => handleChangeLang('ko')}
+                className={`flex items-center justify-center rounded-full p-1 text-xl transition-all duration-150 ${lang === 'ko' ? 'border-2 border-orange-500 bg-orange-50 scale-110' : 'border border-gray-200 bg-white opacity-70 hover:opacity-100'}`}
+                title='한국어로 변경'
+              >
+                <img src={koreaFlag} alt='Korea' className='w-6 h-6 object-cover rounded-full' />
+              </button>
+            </div>
           </div>
         </div>
       </Drawer>

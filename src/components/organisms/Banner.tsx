@@ -2,7 +2,7 @@ import bannerImg from '../../assets/banner1.jpg';
 import BannerContent from '../molecules/BannerContent.tsx';
 
 const Banner = () => (
-  <section className='relative flex h-[400px] w-full items-center justify-center overflow-hidden sm:h-[450px] md:h-[500px] lg:h-[600px]'>
+  <section className='relative flex h-[400px] w-full items-center justify-center overflow-hidden sm:h-[450px] md:h-[500px] lg:h-[600px] bg-white'>
     {/* Banner image */}
     <img
       src={bannerImg}
