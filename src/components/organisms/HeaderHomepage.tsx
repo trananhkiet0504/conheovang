@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogoutOutlined, UserOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { Avatar, Dropdown, Menu, Drawer, Button } from 'antd';
@@ -9,13 +9,14 @@ import Navigation from '../molecules/Navigation';
 import logoImg from '../../assets/conheovang.jpg';
 import vietnamFlag from '../../assets/vietnam.jpg';
 import koreaFlag from '../../assets/hanquoc.png';
+import usFlag from '../../assets/us.png';
 
 const HeaderHomepage: React.FC = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState<string>('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lang = i18n.language;
 
   useEffect(() => {
@@ -75,19 +76,19 @@ const HeaderHomepage: React.FC = () => {
   const userMenu = (
     <Menu onClick={handleMenuClick}>
       <Menu.Item key='profile' icon={<UserOutlined />}>
-        프로필 정보
+        {t('header_profile')}
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key='logout' icon={<LogoutOutlined />}>
-        로그아웃
+        {t('header_logout')}
       </Menu.Item>
     </Menu>
   );
 
-  const mobileMenuItems = [
+  const mobileMenuItems = useMemo(() => [
     {
       key: 'home',
-      label: '홈',
+      label: t('header_home'),
       onClick: () => {
         navigate('/homepage');
         setMobileMenuOpen(false);
@@ -95,7 +96,7 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'menu',
-      label: '메뉴',
+      label: t('header_menu'),
       onClick: () => {
         navigate('/menu');
         setMobileMenuOpen(false);
@@ -103,7 +104,7 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'about',
-      label: '회사 소개',
+      label: t('header_about'),
       onClick: () => {
         navigate('/about');
         setMobileMenuOpen(false);
@@ -111,7 +112,7 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'booking',
-      label: '예약',
+      label: t('header_booking'),
       onClick: () => {
         navigate('/booking');
         setMobileMenuOpen(false);
@@ -119,13 +120,13 @@ const HeaderHomepage: React.FC = () => {
     },
     {
       key: 'contact',
-      label: '문의하기',
+      label: t('header_contact'),
       onClick: () => {
         navigate('/contact');
         setMobileMenuOpen(false);
       },
     },
-  ];
+  ], [t, lang, navigate]);
 
   const handleChangeLang = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -150,7 +151,7 @@ const HeaderHomepage: React.FC = () => {
             <div className='flex cursor-pointer items-center gap-2'>
               <Avatar icon={<UserOutlined />} />
               <span className='text-sm font-medium text-gray-700'>
-                {isLoggedIn ? userName : '로그인'}
+                {isLoggedIn ? userName : t('header_login')}
               </span>
             </div>
           </Dropdown>
@@ -162,7 +163,7 @@ const HeaderHomepage: React.FC = () => {
             <div className='flex cursor-pointer items-center gap-1'>
               <Avatar size='small' icon={<UserOutlined />} />
               <span className='hidden text-xs font-medium text-gray-700 sm:block'>
-                {isLoggedIn ? userName : '로그인'}
+                {isLoggedIn ? userName : t('header_login')}
               </span>
             </div>
           </Dropdown>
@@ -190,6 +191,13 @@ const HeaderHomepage: React.FC = () => {
           >
             <img src={koreaFlag} alt='Korea' className='w-5 h-5 md:w-6 md:h-6 object-cover rounded-full' />
           </button>
+          <button
+            onClick={() => handleChangeLang('en')}
+            className={`flex items-center justify-center rounded-full p-1 text-xl transition-all duration-150 ${lang === 'en' ? 'border-2 border-orange-500 bg-orange-50 scale-110' : 'border border-gray-200 bg-white opacity-70 hover:opacity-100'}`}
+            title='Switch to English'
+          >
+            <img src={usFlag} alt='English' className='w-5 h-5 md:w-6 md:h-6 object-cover rounded-full' />
+          </button>
         </div>
       </header>
 
@@ -204,7 +212,7 @@ const HeaderHomepage: React.FC = () => {
                 className='h-full w-full object-cover object-center'
               />
             </div>
-            <span className='text-lg font-semibold text-gray-800'>Menu</span>
+            <span className='text-lg font-semibold text-gray-800'>{t('header_menu_title')}</span>
           </div>
         }
         placement='right'
@@ -234,10 +242,10 @@ const HeaderHomepage: React.FC = () => {
               <Avatar icon={<UserOutlined />} />
               <div className='flex flex-col'>
                 <span className='text-sm font-medium text-gray-800'>
-                  {isLoggedIn ? userName : '손님'}
+                  {isLoggedIn ? userName : t('header_guest')}
                 </span>
                 <span className='text-xs text-gray-500'>
-                  {isLoggedIn ? '로그인됨' : '로그인되지 않음'}
+                  {isLoggedIn ? t('header_logged_in') : t('header_not_logged_in')}
                 </span>
               </div>
             </div>
@@ -249,7 +257,7 @@ const HeaderHomepage: React.FC = () => {
                 onClick={handleLogout}
                 className='mt-3 w-full justify-start'
               >
-                로그아웃
+                {t('header_logout')}
               </Button>
             )}
             {/* Language Toggle in Drawer */}
@@ -267,6 +275,13 @@ const HeaderHomepage: React.FC = () => {
                 title='한국어로 변경'
               >
                 <img src={koreaFlag} alt='Korea' className='w-6 h-6 object-cover rounded-full' />
+              </button>
+              <button
+                onClick={() => handleChangeLang('en')}
+                className={`flex items-center justify-center rounded-full p-1 text-xl transition-all duration-150 ${lang === 'en' ? 'border-2 border-orange-500 bg-orange-50 scale-110' : 'border border-gray-200 bg-white opacity-70 hover:opacity-100'}`}
+                title='Switch to English'
+              >
+                <img src={usFlag} alt='English' className='w-6 h-6 object-cover rounded-full' />
               </button>
             </div>
           </div>
