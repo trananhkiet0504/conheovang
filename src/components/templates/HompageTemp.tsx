@@ -4,7 +4,7 @@ import {
   EnvironmentOutlined,
   PhoneOutlined,
 } from '@ant-design/icons';
-import { Badge, Button, Input, Layout } from 'antd';
+import {Button, Layout } from 'antd';
 import { motion } from 'framer-motion';
 
 import beefMenu from '../../assets/Beef.jpg';
